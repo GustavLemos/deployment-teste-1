@@ -24,7 +24,7 @@ mongoose.connect(
     process.env.STRING_CONEXAO
 ).then(() => {
     console.log("MongoDB conectado!")
-    app.listen(3001)
+    app.listen(3005)
 })
     .catch((err) => console.log(err))
 
