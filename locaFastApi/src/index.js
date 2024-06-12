@@ -51,7 +51,7 @@ app.use('/contrato', contratoRoutes);
 
 //conexão com o banco
 mongoose.connect(
-    "mongodb+srv://admin:909066@locafast.3d8uptu.mongodb.net/"
+        process.env.STRING_CONEXAO
 ).then(() => {
     console.log("MongoDB conectado!")
     //app.listen(3005)
