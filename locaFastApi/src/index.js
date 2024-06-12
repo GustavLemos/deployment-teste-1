@@ -51,13 +51,16 @@ app.use('/contrato', contratoRoutes);
 
 //conexão com o banco
 mongoose.connect(
-        process.env.STRING_CONEXAO {
-  serverSelectionTimeoutMS: 50000 // Increase timeout to 20 seconds
-}
-).then(() => {
+    process.env.STRING_CONEXAO,  // Remove the extra curly brace here
+    {
+        serverSelectionTimeoutMS: 50000 // Increase timeout to 50 seconds
+    }
+)
+.then(() => {
     console.log("MongoDB conectado!")
     //app.listen(3005)
 })
-    .catch((err) => console.log(err))
+.catch((err) => console.log(err))
+
 
 app.listen(3000)
