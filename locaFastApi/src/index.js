@@ -51,7 +51,7 @@ app.use('/contrato', contratoRoutes);
 
 //conexão com o banco
 mongoose.connect(
-    process.env.STRING_CONEXAO,  // Remove the extra curly brace here
+    "mongodb+srv://admin:909066@locafast.3d8uptu.mongodb.net/",  // Remove the extra curly brace here
     {
         serverSelectionTimeoutMS: 50000 // Increase timeout to 50 seconds
     }
