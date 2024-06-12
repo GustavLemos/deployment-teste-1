@@ -19,6 +19,15 @@ app.use(
     })
 )
 
+//conexão com o banco
+mongoose.connect(
+    process.env.STRING_CONEXAO
+).then(() => {
+    console.log("MongoDB conectado!")
+    app.listen(3001)
+})
+    .catch((err) => console.log(err))
+
 createInitialData()
 
 app.use(express.json())
@@ -47,14 +56,5 @@ app.use('/carro', carroRoutes);
 app.use('/reserva', reservaRoutes);
 app.use('/colaborador', colaboradorRoutes);
 app.use('/contrato', contratoRoutes);
-
-//conexão com o banco
-mongoose.connect(
-    process.env.STRING_CONEXAO
-).then(() => {
-    console.log("MongoDB conectado!")
-    app.listen(3001)
-})
-    .catch((err) => console.log(err))
 
 app.listen(3000)
