@@ -51,7 +51,9 @@ app.use('/contrato', contratoRoutes);
 
 //conexão com o banco
 mongoose.connect(
-        process.env.STRING_CONEXAO
+        process.env.STRING_CONEXAO {
+  serverSelectionTimeoutMS: 50000 // Increase timeout to 20 seconds
+}
 ).then(() => {
     console.log("MongoDB conectado!")
     //app.listen(3005)
