@@ -9,7 +9,7 @@ const checkToken = require('./config/auth/checkToken')
 const createInitialData = require('./config/db/initialData')
 
 // variaveis de ambiente
-require('dotenv').config()
+//require('dotenv').config()
 
 const app = express()
 
