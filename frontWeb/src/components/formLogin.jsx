@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 export default () => {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const history = useHistory();
 
     const handleSubmit = async (event) => {
         //window.location.href = '/reserva'; 
