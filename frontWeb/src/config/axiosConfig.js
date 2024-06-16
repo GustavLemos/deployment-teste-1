@@ -28,7 +28,7 @@ export default instance;
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://seu-backend.com/api', // Substitua pela URL do seu backend
+  baseURL: 'https://deployment-teste-1.onrender.com', // Substitua pela URL do seu backend
   timeout: 5000,
 });
 
