@@ -11,7 +11,7 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (await login({ cpf, senha })) {
-            window.location.href = '/app/cadastro'; // Redireciona para "/app/cadastro" após um login bem-sucedido
+            window.location.href = '../pages/reserva'; // Redireciona para "/app/cadastro" após um login bem-sucedido
         }
     };
 
