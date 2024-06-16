@@ -3,6 +3,7 @@ import './style/form.css';
 import login from '../integration/login'; // Importe a função de login
 import Icon from "./icon";
 import ButtonCadastro from "./buttonCadastro";
+import { useHistory } from "react-router-dom"; 
 
 export default () => {
     const [cpf, setCpf] = useState('');
@@ -12,7 +13,8 @@ export default () => {
         //window.location.href = '/reserva'; 
         event.preventDefault();
         if (await login({ cpf, senha })) {
-            window.location.href = 'app/cadastro'; // Redireciona para "/reserva" após um login bem-sucedido
+            //window.location.href = 'app/cadastro'; // Redireciona para "/reserva" após um login bem-sucedido
+             history.push('/app/cadastro');
         }
     };
 
