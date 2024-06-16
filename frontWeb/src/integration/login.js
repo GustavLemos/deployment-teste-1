@@ -3,7 +3,7 @@ import axios from 'axios';
 export default async function login({ cpf, senha }) {
     try {
 
-        const response = await axios.post('http://localhost:3000/login', {
+        const response = await axios.post('https://deployment-teste-1.onrender.com/login', {
             cpf: cpf,
             senha: senha
         }, {
