@@ -16,7 +16,7 @@ import ReservaStep2 from './components/reservaStep2.jsx';
 import ReservaStep3 from './components/reservaStep3.jsx';
 
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-/*
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -93,22 +93,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-*/
-
-const Main = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/app" element={<App />}>
-          <Route index element={<Reserva />} />
-          <Route path="reserva" element={<Reserva />} />
-          <Route path="cadastroreserva" element={<CadastroReserva />} />
-          {/* Adicione outras rotas conforme necessário */}
-        </Route>
-      </Routes>
-    </Router>
-  );
-};
-
-ReactDOM.render(<Main />, document.getElementById('root'));
