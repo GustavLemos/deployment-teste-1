@@ -12,7 +12,7 @@ export default () => {
         //window.location.href = '/reserva'; 
         event.preventDefault();
         if (await login({ cpf, senha })) {
-            window.location.href = 'app/reserva'; // Redireciona para "/reserva" após um login bem-sucedido
+            window.location.href = 'app/cadastro'; // Redireciona para "/reserva" após um login bem-sucedido
         }
     };
 
