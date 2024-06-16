@@ -38,7 +38,7 @@ const Login = () => {
         const isAuthenticated = true; // Simulação de autenticação bem-sucedida
 
         if (isAuthenticated) {
-            navigate('/reserva'); // Navega para a página de reserva após o login
+            navigate('/cadastro'); // Navega para a página de reserva após o login
         } else {
             // Lógica para lidar com falha na autenticação, se necessário
             console.error('Falha na autenticação');
