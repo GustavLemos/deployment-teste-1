@@ -1,4 +1,4 @@
-/*import React from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from "./pages/login.jsx";
@@ -16,7 +16,7 @@ import ReservaStep2 from './components/reservaStep2.jsx';
 import ReservaStep3 from './components/reservaStep3.jsx';
 
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
-
+/*
 const router = createBrowserRouter([
   {
     path: "/",
@@ -94,16 +94,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 );
 */
-// main.jsx
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import App from './App.jsx';
-import Login from './pages/Login.jsx'; // Verifique o nome do arquivo
-import Reserva from './pages/Reserva.jsx'; // Verifique o nome do arquivo
-import CadastroReserva from './pages/CadastroReserva.jsx'; // Verifique o nome do arquivo
-// Importe outras páginas conforme necessário
 
 const Main = () => {
   return (
