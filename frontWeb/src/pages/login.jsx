@@ -27,7 +27,7 @@ export default Login;
 */
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Importe useNavigate para lidar com navegação
-import FormLogin from '../components/FormLogin'; // Verifique o caminho e o nome do componente FormLogin
+import FormLogin from '../components/formLogin'; // Verifique o caminho e o nome do componente FormLogin
 import '../pages/style/login.css';
 
 const Login = () => {
