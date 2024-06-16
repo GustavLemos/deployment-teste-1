@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "app",
+    path: "/app",
     element: <App />,
     children: [
       {
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Navigate to="reserva" />
       },
       {
-        path: "reserva",
+        path: "/reserva",
         element: <Reserva />,
       },
       {
