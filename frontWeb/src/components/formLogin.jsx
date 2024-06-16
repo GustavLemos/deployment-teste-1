@@ -1,21 +1,19 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; // Importe useHistory do react-router-dom
 import './style/form.css';
 import login from '../integration/login'; // Importe a função de login
 import Icon from "./icon";
 import ButtonCadastro from "./buttonCadastro";
-import { useHistory } from "react-router-dom"; 
 
-export default () => {
+const LoginForm = () => {
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
-    const history = useHistory();
+    const history = useHistory(); // Obtém o objeto history do React Router
 
     const handleSubmit = async (event) => {
-        //window.location.href = '/reserva'; 
         event.preventDefault();
         if (await login({ cpf, senha })) {
-            //window.location.href = 'app/cadastro'; // Redireciona para "/reserva" após um login bem-sucedido
-             history.push('/app/cadastro');
+            history.push('/app/cadastro'); // Redireciona para "/app/cadastro" após um login bem-sucedido
         }
     };
 
@@ -38,3 +36,5 @@ export default () => {
         </div>
     );
 }
+
+export default LoginForm;
