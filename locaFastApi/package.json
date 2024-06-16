@@ -1,14 +1,14 @@
 {
   "name": "locafastapi",
   "version": "1.0.0",
-  "description": "Teste",
+  "description": "LocaFastAPI-PRD",
   "main": "index.js",
   "engines": {
     "node": ">=18.18.0 <=20.0.0"
   },
   "scripts": {
     "test": "",
-    "start": "node index.js",
+    "start": "node src/index.js",
   },
   "keywords": [],
   "author": "",
