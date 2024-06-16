@@ -12,9 +12,9 @@ function Login() {
 
     const state = { ...initialState }
 
-    const handleLogin = () => {
+   /* const handleLogin = () => {
         history.push('/reserva');
-    };
+    }; */
 
     return (
         <div className="loginPage">
