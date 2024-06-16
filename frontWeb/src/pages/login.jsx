@@ -13,7 +13,7 @@ function Login() {
     const state = { ...initialState }
 
     const handleLogin = () => {
-        history.push('/cadastroReserva');
+        history.push('/reserva');
     };
 
     return (
