@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from "./pages/login.jsx";
@@ -93,3 +93,32 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+*/
+// main.jsx
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import App from './App.jsx';
+import Login from './pages/Login.jsx'; // Verifique o nome do arquivo
+import Reserva from './pages/Reserva.jsx'; // Verifique o nome do arquivo
+import CadastroReserva from './pages/CadastroReserva.jsx'; // Verifique o nome do arquivo
+// Importe outras páginas conforme necessário
+
+const Main = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/app" element={<App />}>
+          <Route index element={<Reserva />} />
+          <Route path="reserva" element={<Reserva />} />
+          <Route path="cadastroreserva" element={<CadastroReserva />} />
+          {/* Adicione outras rotas conforme necessário */}
+        </Route>
+      </Routes>
+    </Router>
+  );
+};
+
+ReactDOM.render(<Main />, document.getElementById('root'));
