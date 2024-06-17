@@ -29,7 +29,7 @@ function Cadastro() {
                 senhaHash,
                 genero
             };
-
+            window.location.href = '/';
             const response = await axios.post(
                 'https://deployment-teste-1.onrender.com/colaborador',
                 payload,
@@ -40,7 +40,7 @@ function Cadastro() {
                     },
                 }
             );
-            window.location.href = '/';
+           
             console.log('Resposta da API:', response.data);
             setMessage('Usuário cadastrado com sucesso!');
             // Limpar os campos do formulário após o cadastro (opcional)
