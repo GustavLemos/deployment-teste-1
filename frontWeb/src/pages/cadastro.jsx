@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import bcrypt from 'bcrypt'; // Importando o bcrypt
 import ButtonCadastro from '../components/buttonCadastro';
 import '../pages/style/cadastro.css'; // Certifique-se de que o caminho para o CSS está correto
 
@@ -19,14 +18,13 @@ function Cadastro() {
 
         try {
             const token = localStorage.getItem('token'); // Usar localStorage para obter o token
-            const senhaHash = await bcrypt.hash(senha, 10); // Hash da senha com bcrypt
             const payload = {
                 nome,
                 cpf,
                 rg,
                 telefone,
                 dataNascimento,
-                senhaHash,
+                senha,
                 genero
             };
             // Redirecionamento após o cadastro
