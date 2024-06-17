@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import FormCadastro from '../components/formUser';
 import ButtonCadastro from '../components/buttonCadastro';
 import '../pages/style/cadastro.css'; // Certifique-se de que o caminho para o CSS está correto
 
@@ -63,13 +62,54 @@ function Cadastro() {
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
                 </div>
-                <FormCadastro id={"top"} placeholder={['Nome']} value={nome} onChange={(e) => setNome(e.target.value)} />
-                <div id='middle'>
-                    <FormCadastro id={"middle-left"} placeholder={['CPF']} value={cpf} onChange={(e) => setCPF(e.target.value)} />
-                    <FormCadastro id={"middle-left"} placeholder={['RG']} value={rg} onChange={(e) => setRG(e.target.value)} />
-                    <FormCadastro id={"middle-left"} placeholder={['Telefone']} value={telefone} onChange={(e) => setTelefone(e.target.value)} />
-                    <input id='date' type='date' value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
-                    <FormCadastro id={"middle-right"} placeholder={['Senha']} value={senha} onChange={(e) => setSenha(e.target.value)} />
+                <div className='input-container'>
+                    <input
+                        type='text'
+                        placeholder='Nome'
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
+                    <input
+                        type='text'
+                        placeholder='CPF'
+                        value={cpf}
+                        onChange={(e) => setCPF(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
+                    <input
+                        type='text'
+                        placeholder='RG'
+                        value={rg}
+                        onChange={(e) => setRG(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
+                    <input
+                        type='text'
+                        placeholder='Telefone'
+                        value={telefone}
+                        onChange={(e) => setTelefone(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
+                    <input
+                        type='date'
+                        value={dataNascimento}
+                        onChange={(e) => setDataNascimento(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
+                    <input
+                        type='password'
+                        placeholder='Senha'
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                    />
+                </div>
+                <div className='input-container'>
                     <select value={genero} onChange={(e) => setGenero(e.target.value)}>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
