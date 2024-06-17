@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import FormCadastro from '../components/formUser';
 import ButtonCadastro from '../components/buttonCadastro';
-import { Alert } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import '../pages/style/cadastro.css'; // Certifique-se de que o caminho para o CSS está correto
 
 function Cadastro() {
     const [nome, setNome] = useState('');
@@ -15,17 +14,19 @@ function Cadastro() {
     const [genero, setGenero] = useState('Masculino');
     const [message, setMessage] = useState('');
 
-    const cadastrar = async () => {
+    const cadastrar = async (event) => {
+        event.preventDefault();
+
         try {
-            const token = await AsyncStorage.getItem('token');
+            const token = localStorage.getItem('token'); // Usar localStorage para obter o token
             const response = await axios.post(
-                'https://deployment-teste-1.onrender.com/colaborador', // URL da sua rota de cadastro
-                { nome, cpf, rg, telefone, dataNascimento, senha, genero }, // Dados do usuário
+                'https://deployment-teste-1.onrender.com/colaborador',
+                { nome, cpf, rg, telefone, dataNascimento, senha, genero },
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json',
-                        'accept': 'application/json' // Usar o token gerado no login para autenticar a requisição
+                        'accept': 'application/json'
                     },
                 }
             );
@@ -48,7 +49,7 @@ function Cadastro() {
 
     return (
         <div className='userSign'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={cadastrar}>
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
                 </div>
@@ -64,7 +65,7 @@ function Cadastro() {
                     </FormCadastro>
                 </div>
                 <div id='button-container'>
-                    <ButtonCadastro text={"Cadastrar"} width={'65%'} type="submit" onPress={cadastrar} />
+                    <ButtonCadastro text={"Cadastrar"} width={'65%'} type="submit" />
                 </div>
             </form>
             {message && <p>{message}</p>}
