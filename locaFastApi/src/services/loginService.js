@@ -52,11 +52,23 @@ class LoginService {
   }
 
   async validatePassword(password, hashPassword) {
-    if (!await bcrypt.compare(password, hashPassword)) {
+  /*  if (!await bcrypt.compare(password, hashPassword)) {
       throw new ColaboradorException(
         httpStatus.UNAUTHORIZED,
         "Senha ou CPF incorretos."
       );
+    } */
+        // Verifica se hashPassword é um hash bcrypt válido
+    if (hashPassword.startsWith('$2b$')) {
+        // Se for um hash bcrypt, faz a comparação normalmente
+        if (!await bcrypt.compare(password, hashPassword)) {
+            throw new Error('Senha ou CPF incorretos.');
+        }
+    } else {
+        // Se não for um hash bcrypt, assume que é a senha em texto simples
+        if (password !== hashPassword) {
+            throw new Error('Senha ou CPF incorretos.');
+        }
     }
   }
 
@@ -78,8 +90,20 @@ class LoginService {
   }
 
   async validadePassword(password, hashPassword) {
-    if (!await bcrypt.compare(password, hashPassword)) {
+    /*if (!await bcrypt.compare(password, hashPassword)) {
         throw new ColaboradorException(httpStatus.UNAUTHORIZED, "Senha ou CPF incorretos.")
+    } */
+        // Verifica se hashPassword é um hash bcrypt válido
+    if (hashPassword.startsWith('$2b$')) {
+        // Se for um hash bcrypt, faz a comparação normalmente
+        if (!await bcrypt.compare(password, hashPassword)) {
+            throw new Error('Senha ou CPF incorretos.');
+        }
+    } else {
+        // Se não for um hash bcrypt, assume que é a senha em texto simples
+        if (password !== hashPassword) {
+            throw new Error('Senha ou CPF incorretos.');
+        }
     }
 }
 
