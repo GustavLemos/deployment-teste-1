@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const Colab = require('../models/Colaborador')
 
 const ColaboradorService = require('../services/colaboradorService')
 
