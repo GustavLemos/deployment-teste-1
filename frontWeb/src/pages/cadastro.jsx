@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+import bcrypt from 'bcrypt';
 import React, { useState } from 'react';
 import axios from 'axios';
 import ButtonCadastro from '../components/buttonCadastro';
