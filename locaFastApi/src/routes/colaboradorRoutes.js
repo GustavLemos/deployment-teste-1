@@ -9,8 +9,17 @@ async hashPassword(password) { return await bcrypt.hash(password, 10); } //req.b
 router.post('/', async (req, res) => {
 
          try {
-           req.body.senha = hashPassword(req.body.senha
-           return await Colab.create(req.body)
+           //req.body.senha = hashPassword(req.body.senha)
+         const payload = {
+             nome: req.body.nome,
+             cpf: req.body.cpf,
+             rg: req.body.rg,
+             telefone: req.body.telefone,
+             dataNascimento: req.body.dataNascimento,
+             senha: hashPassword(req.body.senha),
+             genero: req.body.genero
+         };
+         return await Colab.create(payload)
          res.status(201).json({"mensage":"Usuario Cadastrado"});
         } catch (error) {
         return {
