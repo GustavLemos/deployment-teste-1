@@ -1,3 +1,4 @@
+req.body.senha = hashPassword(req.body.senha) await bcrypt.hash(password, 10);
 import React, { useState } from 'react';
 import axios from 'axios';
 import ButtonCadastro from '../components/buttonCadastro';
