@@ -59,7 +59,7 @@ function Cadastro() {
     };
 
     return (
-        <div className='userSign'>
+        <div >
             <form onSubmit={cadastrar}>
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
