@@ -7,7 +7,7 @@ const colaboradorService = new ColaboradorService();
 router.post('/', async (req, res) => {
 
     try {
-        conts colab = await colaboradorService.postColaborador(req)
+        const colab = await colaboradorService.postColaborador(req)
         return res.status(colab.status).json(colab)
     } catch (error) {
         return {
