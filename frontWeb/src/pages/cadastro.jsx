@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import ButtonCadastro from '../components/buttonCadastro';
 import '../pages/style/cadastro.css'; // Certifique-se de que o caminho para o CSS está correto
-
+//comente
 function Cadastro() {
     const [nome, setNome] = useState('');
     const [cpf, setCPF] = useState('');
