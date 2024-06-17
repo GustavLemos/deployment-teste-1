@@ -56,61 +56,71 @@ function Cadastro() {
         }
     };
 
-    return (
+      return (
         <div className='userSign'>
             <form onSubmit={cadastrar}>
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='Nome'
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='CPF'
                         value={cpf}
                         onChange={(e) => setCPF(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='RG'
                         value={rg}
                         onChange={(e) => setRG(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='Telefone'
                         value={telefone}
                         onChange={(e) => setTelefone(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='date'
                         value={dataNascimento}
                         onChange={(e) => setDataNascimento(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='password'
                         placeholder='Senha'
                         value={senha}
                         onChange={(e) => setSenha(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div className='input-container'>
-                    <select value={genero} onChange={(e) => setGenero(e.target.value)}>
+                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                    <select
+                        value={genero}
+                        onChange={(e) => setGenero(e.target.value)}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px', background: 'var(--primary-color-light)', color: '#333' }}
+                    >
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                     </select>
