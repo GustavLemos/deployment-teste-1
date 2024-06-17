@@ -5,7 +5,10 @@ const ColaboradorService = require('../services/colaboradorService')
 
 const colaboradorService = new ColaboradorService();
 const bcrypt = require('bcrypt')  
-async hashPassword(password) { return await bcrypt.hash(password, 10); } //req.body.senha = hashPassword(req.body.senha)
+
+async hashPassword(password){
+         return await bcrypt.hash(password, 10); 
+} //req.body.senha = hashPassword(req.body.senha)
 router.post('/', async (req, res) => {
 
          try {
