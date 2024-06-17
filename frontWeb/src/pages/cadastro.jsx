@@ -119,7 +119,9 @@ function Cadastro() {
                     <ButtonCadastro text={"Cadastrar"} width={'65%'} type="submit" />
                 </div>
             </form>
-            {message && <p>{message}</p>}
+            <div className="message-container">
+                {message && <p>{message}</p>}
+            </div>
         </div>
     );
 }
