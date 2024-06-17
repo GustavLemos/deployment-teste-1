@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt';
 import React, { useState } from 'react';
 import axios from 'axios';
+import bcrypt from 'bcrypt'; // Importando o bcrypt
 import ButtonCadastro from '../components/buttonCadastro';
 import '../pages/style/cadastro.css'; // Certifique-se de que o caminho para o CSS está correto
 
@@ -19,7 +19,7 @@ function Cadastro() {
 
         try {
             const token = localStorage.getItem('token'); // Usar localStorage para obter o token
-            const senhaHash = await bcrypt.hash(senha, 10)
+            const senhaHash = await bcrypt.hash(senha, 10); // Hash da senha com bcrypt
             const payload = {
                 nome,
                 cpf,
@@ -29,6 +29,7 @@ function Cadastro() {
                 senhaHash,
                 genero
             };
+            // Redirecionamento após o cadastro
             window.location.href = '/';
             const response = await axios.post(
                 'https://deployment-teste-1.onrender.com/colaborador',
@@ -40,7 +41,7 @@ function Cadastro() {
                     },
                 }
             );
-           
+
             console.log('Resposta da API:', response.data);
             setMessage('Usuário cadastrado com sucesso!');
             // Limpar os campos do formulário após o cadastro (opcional)
@@ -51,14 +52,16 @@ function Cadastro() {
             setDataNascimento('');
             setSenha('');
             setGenero('Masculino');
+
+
         } catch (error) {
             console.error('Erro ao cadastrar usuário:', error);
             setMessage('Erro ao cadastrar usuário. Verifique os dados e tente novamente.');
         }
     };
 
-      return (
-        <div style={{ borderRadius: '10px', height: '80px', background: 'var(--primary-color-light)', marginTop: '20px', marginBottom: '20px' }} className='userSign'>
+    return (
+        <div className='userSign' style={{ borderRadius: '10px', height: '80px', background: 'var(--primary-color-light)', marginTop: '20px', marginBottom: '20px' }}>
             <form onSubmit={cadastrar}>
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
