@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Importe o Axios
+import axios from 'axios';
 import FormCadastro from '../components/formUser';
 import ButtonCadastro from '../components/buttonCadastro';
 import "../pages/style/cadastro.css";
@@ -11,13 +11,13 @@ function Cadastro() {
     const [telefone, setTelefone] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
     const [senha, setSenha] = useState('');
-    const [genero, setGenero] = useState('Masculino'); // Valor padrão
+    const [genero, setGenero] = useState('Masculino');
+    const [message, setMessage] = useState(''); // State for message
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            // Construir o payload com os dados do formulário
             const payload = {
                 nome,
                 cpf,
@@ -28,20 +28,18 @@ function Cadastro() {
                 genero
             };
 
-            // Enviar o POST request para a API usando Axios
             const response = await axios.post('https://deployment-teste-1.onrender.com/colaborador', payload);
 
-            // Lógica para lidar com a resposta da API (opcional)
             console.log('Resposta da API:', response.data);
             setMessage('Usuário cadastrado com sucesso!');
-            // Limpar os campos do formulário após o cadastro (opcional)
+
             setNome('');
             setCPF('');
             setRG('');
             setTelefone('');
             setDataNascimento('');
             setSenha('');
-            setGenero('Masculino'); // Resetar para o valor padrão
+            setGenero('Masculino');
 
         } catch (error) {
             console.error('Erro ao cadastrar usuário:', error);
