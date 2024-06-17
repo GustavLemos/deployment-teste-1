@@ -18,7 +18,7 @@ class ColaboradorRepository {
         }
     }
 
-    async findByCpfAndRg(cpf, rg) {
+    async findByCpfAndRg(cpf, rg = null) {
         try {
             let query = { cpf: cpf };
             if (rg) {
