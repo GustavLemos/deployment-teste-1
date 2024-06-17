@@ -39,7 +39,7 @@ function Cadastro() {
                     },
                 }
             );
-
+            window.location.href = '/';
             console.log('Resposta da API:', response.data);
             setMessage('Usuário cadastrado com sucesso!');
             // Limpar os campos do formulário após o cadastro (opcional)
