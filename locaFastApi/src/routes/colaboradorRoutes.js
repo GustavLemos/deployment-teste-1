@@ -7,14 +7,14 @@ const colaboradorService = new ColaboradorService();
 
 router.post('/', async (req, res) => {
 
-    try {
-        const colab = await colaboradorService.postColaborador(req)
-        return res.status(colab.status).json(colab)
-    } catch (error) {
+         try {
+            return await Colaborador.create(req)
+        } catch (error) {
         return {
-      return res.status(error.status).json({ message: error.message });
+            status: error.status,
+            message: error.message
         }
-    }
+        }
 })
 /*
 const router = require('express').Router()
