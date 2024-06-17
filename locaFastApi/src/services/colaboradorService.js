@@ -52,7 +52,7 @@ class ColaboradorService {
             };
 
         } catch (error) {
-            throw new ColaboradorException(error.status ? error.status : httpStatus.INTERNAL_SERVER_ERROR, error.message)
+            return res.status(error.status).json({ message: error.message });
         }
     }
 
