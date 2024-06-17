@@ -11,7 +11,6 @@ router.post('/', async (req, res) => {
         return res.status(colab.status).json(colab)
     } catch (error) {
         return {
-      console.error(error);
       return res.status(error.status).json({ message: error.message });
         }
     }
