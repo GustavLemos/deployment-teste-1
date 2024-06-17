@@ -19,6 +19,7 @@ function Cadastro() {
 
         try {
             const token = localStorage.getItem('token'); // Usar localStorage para obter o token
+
             const payload = {
                 nome,
                 cpf,
@@ -35,8 +36,7 @@ function Cadastro() {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json',
-                        'accept': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                 }
             );
@@ -65,11 +65,11 @@ function Cadastro() {
                 </div>
                 <FormCadastro id={"top"} placeholder={['Nome']} value={nome} onChange={(e) => setNome(e.target.value)} />
                 <div id='middle'>
-                    <FormCadastro  id={"middle-left"} placeholder={['CPF']} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+                    <FormCadastro id={"middle-left"} placeholder={['CPF']} value={cpf} onChange={(e) => setCPF(e.target.value)} />
                     <FormCadastro id={"middle-left"} placeholder={['RG']} value={rg} onChange={(e) => setRG(e.target.value)} />
                     <FormCadastro id={"middle-left"} placeholder={['Telefone']} value={telefone} onChange={(e) => setTelefone(e.target.value)} />
-                    <FormCadastro id={"middle-right"} placeholder={['Senha']} value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <input id='date' type='date' value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
+                    <FormCadastro id={"middle-right"} placeholder={['Senha']} value={senha} onChange={(e) => setSenha(e.target.value)} />
                     <select value={genero} onChange={(e) => setGenero(e.target.value)}>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
