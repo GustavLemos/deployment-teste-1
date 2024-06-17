@@ -7,16 +7,33 @@ const colaboradorService = new ColaboradorService();
 router.post('/', async (req, res) => {
 
     try {
-        await colaboradorService.postColaborador(req)
-        return res.status(colaboradorService.status).json(colaboradorService.message)
+        conts colab = await colaboradorService.postColaborador(req)
+        return res.status(colab.status).json(colab)
     } catch (error) {
         return {
-            status: error.status,
-            message: error.message
+      console.error(error);
+      return res.status(error.status).json({ message: error.message });
         }
     }
 })
+/*
+const router = require('express').Router()
 
+const LoginService = require('../services/loginService')
+
+const loginService = new LoginService()
+
+router.post("/", async (req, res) => {
+    try {
+        const colaborador = await loginService.findByCpf(req)
+        return res.status(colaborador.status).json(colaborador);
+    } catch (error) {
+      console.error(error);
+      return res.status(error.status).json({ message: error.message });
+    }
+  });
+module.exports = router
+*/
 router.get('/', async (_, res) => {
 
     try {
