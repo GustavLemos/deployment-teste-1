@@ -4,11 +4,13 @@ const Colab = require('../models/Colaborador')
 const ColaboradorService = require('../services/colaboradorService')
 
 const colaboradorService = new ColaboradorService();
-
+const bcrypt = require('bcrypt')  
+async hashPassword(password) { return await bcrypt.hash(password, 10); } //req.body.senha = hashPassword(req.body.senha)
 router.post('/', async (req, res) => {
 
          try {
-            return await Colab.create(req.body)
+           req.body.senha = hashPassword(req.body.senha
+           return await Colab.create(req.body)
          res.status(201).json({"mensage":"Usuario Cadastrado"});
         } catch (error) {
         return {
