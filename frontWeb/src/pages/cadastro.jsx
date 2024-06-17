@@ -16,7 +16,7 @@ const Cadastro = () => {
     try {
       const token = await AsyncStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:3000/colaborador', // URL da sua rota de cadastro
+        'https://deployment-teste-1.onrender.com/colaborador', // URL da sua rota de cadastro
         { nome, cpf, rg, telefone, dataNascimento, senha, genero }, // Dados do usuário
         {
           headers: {
