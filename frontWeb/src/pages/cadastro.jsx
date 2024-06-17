@@ -59,7 +59,7 @@ function Cadastro() {
     };
 
     return (
-        <div className='userSign' style={{ borderRadius: '10px', height: '80px', background: 'var(--primary-color-light)', marginTop: '20px', marginBottom: '20px' }}>
+        <div className='userSign'>
             <form onSubmit={cadastrar}>
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
