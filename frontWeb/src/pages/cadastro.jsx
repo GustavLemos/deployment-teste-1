@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FormCadastro from '../components/formUser';
 import ButtonCadastro from '../components/buttonCadastro';
@@ -12,7 +12,16 @@ function Cadastro() {
     const [dataNascimento, setDataNascimento] = useState('');
     const [senha, setSenha] = useState('');
     const [genero, setGenero] = useState('Masculino');
-    const [message, setMessage] = useState(''); // State for message
+    const [message, setMessage] = useState('');
+    const [token, setToken] = useState('');
+
+    useEffect(() => {
+        // Recuperar token do localStorage
+        const storedToken = localStorage.getItem('token');
+        if (storedToken) {
+            setToken(storedToken);
+        }
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -28,7 +37,14 @@ function Cadastro() {
                 genero
             };
 
-            const response = await axios.post('https://deployment-teste-1.onrender.com/colaborador', payload);
+            // Configurar o cabeçalho da requisição com o token
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            };
+
+            const response = await axios.post('https://deployment-teste-1.onrender.com/colaborador', payload, config);
 
             console.log('Resposta da API:', response.data);
             setMessage('Usuário cadastrado com sucesso!');
