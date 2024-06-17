@@ -64,7 +64,9 @@ function Cadastro() {
                 <div id='header-form'>
                     <h2>Cadastro de Usuário</h2>
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>Nome</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='Nome'
@@ -73,7 +75,9 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>CPF</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='CPF'
@@ -82,7 +86,9 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>RG</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='RG'
@@ -91,7 +97,9 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>Telefone</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='text'
                         placeholder='Telefone'
@@ -100,7 +108,9 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>Data de Nascimento</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='date'
                         value={dataNascimento}
@@ -108,7 +118,9 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>Senha</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <input
                         type='password'
                         placeholder='Senha'
@@ -117,16 +129,19 @@ function Cadastro() {
                         style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px' }}
                     />
                 </div>
-                <div style={{ borderRadius: '5px', height: '40px', background: 'var(--primary-color-light)', marginTop: '10px', marginBottom: '10px' }}>
+                <br/>
+                <h3>Genero</h3>
+                <div style={{ borderRadius: '5px', height: '40px', background: '#E4E9F7', marginTop: '10px', marginBottom: '10px' }}>
                     <select
                         value={genero}
                         onChange={(e) => setGenero(e.target.value)}
-                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px', background: 'var(--primary-color-light)', color: '#333' }}
+                        style={{ borderRadius: '5px', height: '100%', width: '100%', padding: '0 10px', background: '#E4E9F7', color: '#333' }}
                     >
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                     </select>
                 </div>
+                <br/>
                 <div id='button-container'>
                     <ButtonCadastro text={"Cadastrar"} width={'65%'} type="submit" />
                 </div>
