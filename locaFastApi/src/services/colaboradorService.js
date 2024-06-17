@@ -40,10 +40,10 @@ class ColaboradorService {
     async postColaborador(req) {
         try {
 
-            this.validadeUserExists(req.body.cpf, req.body.rg)
-            const validacaoModelo = colaboradorRepository.modelIsValid(req.body);
+            //this.validadeUserExists(req.body.cpf, req.body.rg)
+            //const validacaoModelo = colaboradorRepository.modelIsValid(req.body);
 
-            req.body.senha = hashPassword(req.body.senha)
+            //req.body.senha = hashPassword(req.body.senha)
 
             await colaboradorRepository.create(req.body);
             return {
