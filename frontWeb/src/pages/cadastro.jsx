@@ -1,4 +1,4 @@
-req.body.senha = hashPassword(req.body.senha) await bcrypt.hash(password, 10);
+const bcrypt = require('bcrypt')
 import React, { useState } from 'react';
 import axios from 'axios';
 import ButtonCadastro from '../components/buttonCadastro';
@@ -19,14 +19,14 @@ function Cadastro() {
 
         try {
             const token = localStorage.getItem('token'); // Usar localStorage para obter o token
-
+            const senhaHash = await bcrypt.hash(senha, 10)
             const payload = {
                 nome,
                 cpf,
                 rg,
                 telefone,
                 dataNascimento,
-                senha,
+                senhaHash,
                 genero
             };
 
