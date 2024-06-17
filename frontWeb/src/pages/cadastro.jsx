@@ -55,14 +55,15 @@ function Cadastro() {
                 </div>
                 <FormCadastro id={"top"} placeholder={['Nome']} value={nome} onChange={(e) => setNome(e.target.value)} />
                 <div id='middle'>
-                    <FormCadastro id={"middle-left"} placeholder={['CPF', 'RG', 'Telefone']} value={cpf} onChange={(e) => setCPF(e.target.value)} />
-                    <FormCadastro id={"middle-right"} placeholder={['Senha']}>
-                        <input id='date' type='date' value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
-                        <select value={genero} onChange={(e) => setGenero(e.target.value)}>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                        </select>
-                    </FormCadastro>
+                    <FormCadastro id={"middle-left"} placeholder={['CPF']} value={cpf} onChange={(e) => setCPF(e.target.value)} />
+                    <FormCadastro id={"middle-right"} placeholder={['RG']} value={rg} onChange={(e) => setRG(e.target.value)} />
+                    <FormCadastro id={"middle-right"} placeholder={['Telefone']} value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+                    <FormCadastro id={"middle-right"} placeholder={['Senha']} value={senha} onChange={(e) => setSenha(e.target.value)} />
+                    <input id='date' type='date' value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} />
+                    <select value={genero} onChange={(e) => setGenero(e.target.value)}>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
                 </div>
                 <div id='button-container'>
                     <ButtonCadastro text={"Cadastrar"} width={'65%'} type="submit" />
