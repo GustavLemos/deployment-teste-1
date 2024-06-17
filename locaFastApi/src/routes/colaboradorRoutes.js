@@ -9,6 +9,7 @@ router.post('/', async (req, res) => {
 
          try {
             return await Colab.create(req.body)
+         res.status(201).json({"mensage":"Usuario Cadastrado"});
         } catch (error) {
         return {
             status: error.status,
